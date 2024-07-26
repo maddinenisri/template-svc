@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:with="p=${person}, skills=${skills}">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Generated PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: Lightgreen;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello, <span th:text="${p.name}">User</span>!</h1>
+<p>This is a sample PDF generated using Spring Boot and Thymeleaf.</p>
+<table th:if="${skills != null && skills.size() > 0}" rules="all">
+    <thead>
+    <tr>
+        <th>Skill</th>
+        <th>Level</th>
+    </tr>
+    <tr th:each="skill: ${skills}">
+        <td><span th:text="${skill.name}">Skill</span></td>
+        <td><span th:text="${skill.level}">Level</span></td>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>
