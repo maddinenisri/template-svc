@@ -33,7 +33,7 @@ public class TemplateService {
 
     private Map<String, Object> templateVariables() {
         Map<String, Object> variables = new HashMap<>();
-        variables.put("person", new Person("Srini", 47));
+        variables.put("person", new Person("Test user", 30));
         List<Skill> skills = new ArrayList<>();
         skills.add(new Skill("Java", "Expert"));
         skills.add(new Skill("Python", "Intermediate"));
